@@ -6,7 +6,7 @@ sbit CLK = P1^3;
 sbit TRIG = P1^4;
 sbit ECHO = P1^5;
 
-void Delay10us() {          // 12MHz??,?10us
+void Delay10us() {          
     unsigned char i;
     _nop_();
     i = 2;
@@ -14,16 +14,16 @@ void Delay10us() {          // 12MHz??,?10us
 }
 
 void Trigger() {
-    TRIG = 0;               // ???????
-    TRIG = 1;               // ??
-    Delay10us();            // ????10us
-    TRIG = 0;               // ??,????
+    TRIG = 0;               
+    TRIG = 1;               
+    Delay10us();            
+    TRIG = 0;               
 }
 
 void Timer0_Init() {
-    TMOD &= 0xF0;           // ??T1??
-    TMOD |= 0x01;           // T0??1:16????
-    TH0 = 0; TL0 = 0;       // ??
+    TMOD &= 0xF0;           
+    TMOD |= 0x01;           
+    TH0 = 0; TL0 = 0;       
 }
 
 
